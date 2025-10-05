@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Apotheca - Premium Peptide Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0D0D0D;
+            --secondary-bg: #1A1A1A;
+            --card-bg: #1E1E1E;
+            --accent-color: #1E3A5F;
+            --secondary-accent: #2A4D3E;
+            --primary-text: #FFFFFF;
+            --secondary-text: #D0D0D0;
+            --border-color: #2A2A2A;
+            --gold-color: #D4AF37;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--secondary-text);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #2a4d7f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--primary-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-text);
+            color: var(--primary-bg);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            letter-spacing: 1px;
+        }
+
+        .logo svg {
+            margin-right: 10px;
+        }
+
+        .logo span {
+            color: var(--gold-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-icons i {
+            margin-left: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-icons i:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 20px 20px;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* Product Categories */
+        .categories {
+            padding: 80px 0;
+            background-color: var(--secondary-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .category-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Product Bundles */
+        .bundles {
+            padding: 80px 0;
+            background-color: var(--primary-bg);
+        }
+
+        .bundles-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bundle-slider {
+            width: 100%;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) var(--card-bg);
+        }
+
+        .bundle-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .bundle-slider::-webkit-scrollbar-track {
+            background: var(--card-bg);
+            border-radius: 4px;
+        }
+
+        .bundle-slider::-webkit-scrollbar-thumb {
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .bundle-cards {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 10px;
+        }
+
+        .bundle-card {
+            flex: 0 0 350px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .bundle-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .bundle-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .bundle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .bundle-card:hover .bundle-image img {
+            transform: scale(1.05);
+        }
+
+        .bundle-content {
+            padding: 25px;
+        }
+
+        .bundle-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .bundle-description {
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .bundle-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .price-current {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-text);
+        }
+
+        .price-original {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-accent);
+            color: var(--primary-text);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--secondary-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-rating {
+            margin-bottom: 20px;
+            color: var(--gold-color);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary-text);
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--primary-text);
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-bg);
+            padding: 70px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--secondary-text);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            color: var(--primary-text);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        /* Product Detail Page */
+        .product-detail {
+            padding: 150px 0 80px;
+            background-color: var(--primary-bg);
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-text);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-color);
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .product-gallery {
+            position: relative;
+        }
+
+        .product-main-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .product-main-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .product-thumbnail {
+            flex: 0 0 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .product-thumbnail:hover,
+        .product-thumbnail.active {
+            border-color: var(--accent-color);
+        }
+
+        .product-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .product-options {
+            margin-bottom: 30px;
+        }
+
+        .option-group {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .option-values {
+            display: flex;
+            gap: 10px;
+        }
+
+        .option-value {
+            padding: 8px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-value:hover,
+        .option-value.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .quantity-label {
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .quantity-input {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--card-bg);
+            border: none;
+            color: var(--primary-text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .quantity-field {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            background-color: var(--card-bg);
+            border: none;
+            color: var(--primary-text);
+            font-size: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .product-details-tabs {
+            margin-top: 60px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            color: var(--secondary-text);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-text);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-text);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .product-specs {
+            margin-bottom: 30px;
+        }
+
+        .spec-row {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-label {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            flex: 2;
+            color: var(--secondary-text);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--card-bg);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(30, 58, 95, 0.2);
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .related-products {
+            margin-top: 80px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .related-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .related-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .related-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .related-card:hover .related-image img {
+            transform: scale(1.05);
+        }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .related-price {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Longevity Protocol Image */
+        .longevity-protocol-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1E3A5F 0%, #2A4D3E 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .longevity-protocol-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+
+        .longevity-protocol-icon {
+            position: relative;
+            z-index: 2;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .longevity-protocol-title {
+            position: relative;
+            z-index: 2;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-text);
+            text-align: center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                order: 2;
+            }
+
+            .product-info {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .bundle-card {
+                flex: 0 0 300px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .tabs-nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .categories, .bundles, .testimonials, .newsletter {
+                padding: 60px 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="#D4AF37" stroke-width="2"/>
+                    <path d="M20 10V30M10 20H30M15 15L25 25M25 15L15 25" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="20" cy="20" r="5" fill="#D4AF37"/>
+                </svg>
+                Peptide <span>Apotheca</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#bundles">Bundles</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage -->
+    <div id="homepage">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Premium Peptide <span>Solutions</span></h1>
+                        <p>Science-backed formulations for enhanced wellness, recovery, and vitality. Experience the future of peptide therapy.</p>
+                        <a href="#bundles" class="btn">Explore Bundles</a>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-badge">Featured</div>
+                        <img src="https://z-cdn-media.chatglm.cn/files/cc8ab945-96a6-43d3-b957-0b62e139f461_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790874857-d2841709f1aa414997f61b4be500661b-0-1ffbae6bd14503aaa470b90526af8ec0" alt="BPC-157 Peptide">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Targeted Solutions</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Anti-Aging</h3>
+                        <p>Premium peptides to support cellular health and longevity.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Muscle Building</h3>
+                        <p>Enhance recovery and muscle growth with our specialized formulations.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Fat Loss</h3>
+                        <p>Accelerate metabolism and support healthy weight management.</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Skin & Hair</h3>
+                        <p>Revitalize your appearance with our beauty-enhancing peptides.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Bundles -->
+        <section id="bundles" class="bundles">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Curated Bundles</h2>
+                </div>
+                <div class="bundles-container">
+                    <div class="bundle-slider">
+                        <div class="bundle-cards">
+                            <div class="bundle-card">
+                                <div class="bundle-image">
+                                    <img src="https://z-cdn-media.chatglm.cn/files/0c9e4599-bad5-434c-95ea-69fd2d8b631b_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790874857-3f3a82a2ac174392826fc269fda71309-0-eb277d1ebfc2c2cd8c85d372dafed3ef" alt="Recovery Bundle">
+                                </div>
+                                <div class="bundle-content">
+                                    <h3 class="bundle-title">Recovery Essentials</h3>
+                                    <p class="bundle-description">BPC-157 + TB-500 for accelerated healing and recovery.</p>
+                                    <div class="bundle-price">
+                                        <span class="price-current">$249</span>
+                                        <span class="price-original">$299</span>
+                                    </div>
+                                    <a href="#product" class="btn">View Details</a>
+                                </div>
+                                <div class="bundle-badge">Save 17%</div>
+                            </div>
+                            <div class="bundle-card">
+                                <div class="bundle-image">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxGosbkjsOmDjg8dng45kDhUftGz3suuetLg&s" alt="Recovery Bundle">
+                                </div>
+                                
+                                <div class="bundle-content">
+                                    <h3 class="bundle-title">Longevity Protocol</h3>
+                                    <p class="bundle-description">Epithalon + Thymalin for cellular regeneration and vitality.</p>
+                                    <div class="bundle-price">
+                                        <span class="price-current">$349</span>
+                                        <span class="price-original">$429</span>
+                                    </div>
+                                    <a href="#product" class="btn">View Details</a>
+                                </div>
+                                <div class="bundle-badge">Save 19%</div>
+                            </div>
+                            <div class="bundle-card">
+                                <div class="bundle-image">
+                                    <img src="https://z-cdn-media.chatglm.cn/files/cc8ab945-96a6-43d3-b957-0b62e139f461_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790874857-d2841709f1aa414997f61b4be500661b-0-1ffbae6bd14503aaa470b90526af8ec0" alt="Performance Bundle">
+                                </div>
+                                <div class="bundle-content">
+                                    <h3 class="bundle-title">Performance Max</h3>
+                                    <p class="bundle-description">CJC-1295 + Ipamorelin for enhanced muscle growth and recovery.</p>
+                                    <div class="bundle-price">
+                                        <span class="price-current">$399</span>
+                                        <span class="price-original">$499</span>
+                                    </div>
+                                    <a href="#product" class="btn">View Details</a>
+                                </div>
+                                <div class="bundle-badge">Save 20%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Client Experiences</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-content">"The Recovery Essentials bundle completely transformed my post-workout recovery. I've noticed significant improvements in muscle repair and joint comfort. Peptide Apotheca delivers exceptional quality."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael T.</h4>
+                                <p>Fitness Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-content">"I've been using the Longevity Protocol for 3 months now, and the results are remarkable. My energy levels have increased, and my skin has a noticeable glow. This is truly a game-changer for anti-aging."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah L.</h4>
+                                <p>Wellness Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-content">"As a professional athlete, recovery is crucial. The Performance Max bundle has helped me reduce recovery time between training sessions significantly. I'm setting new personal records consistently."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                            </div>
+                            <div class="author-info">
+                                <h4>David R.</h4>
+                                <p>Professional Athlete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Join Our Community</h2>
+                    <p>Subscribe to receive exclusive offers and wellness insights</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="product-page" style="display: none;">
+        <section class="product-detail">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#homepage">Home</a> / <a href="#categories">Anti-Aging</a> / <span>Longevity Protocol</span>
+                </div>
+                <div class="product-container">
+                    <div class="product-gallery">
+                        <div class="product-main-image">
+                            <div class="longevity-protocol-image">
+                                <div class="longevity-protocol-icon">
+                                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="40" stroke="#FFFFFF" stroke-width="3"/>
+                                        <path d="M50 25V75M25 50H75M37.5 37.5L62.5 62.5M62.5 37.5L37.5 62.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                                        <circle cx="50" cy="50" r="12" fill="#FFFFFF"/>
+                                    </svg>
+                                </div>
+                                <h3 class="longevity-protocol-title">Longevity Protocol</h3>
+                            </div>
+                        </div>
+                        <div class="product-thumbnails">
+                            <div class="product-thumbnail active">
+                                <div class="longevity-protocol-image" style="height: 100px;">
+                                    <div class="longevity-protocol-icon" style="width: 40px; height: 40px;">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYKmcvjmKxnekyJvOLxOl49IoV26LeYGZHA&s" alt="">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-thumbnail">
+                                <img src="https://z-cdn-media.chatglm.cn/files/0c9e4599-bad5-434c-95ea-69fd2d8b631b_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790874857-3f3a82a2ac174392826fc269fda71309-0-eb277d1ebfc2c2cd8c85d372dafed3ef" alt="Product Box">
+                            </div>
+                            <div class="product-thumbnail">
+                                <img src="https://z-cdn-media.chatglm.cn/files/cc8ab945-96a6-43d3-b957-0b62e139f461_219ba4fe-e2e7-4040-a9e8-ee6eeffc9682.jpg?auth_key=1790874857-d2841709f1aa414997f61b4be500661b-0-1ffbae6bd14503aaa470b90526af8ec0" alt="Product Bottle">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h1 class="product-title">Longevity Protocol</h1>
+                        <div class="product-price">$349.00</div>
+                        <p class="product-description">Our premium Longevity Protocol combines Epithalon and Thymalin peptides to support cellular regeneration, enhance immune function, and promote overall vitality. This scientifically-formulated bundle targets the fundamental mechanisms of aging at the cellular level.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <span class="option-label">Dosage:</span>
+                                <div class="option-values">
+                                    <div class="option-value active">5mg</div>
+                                    <div class="option-value">10mg</div>
+                                    <div class="option-value">15mg</div>
+                                </div>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-label">Duration:</span>
+                                <div class="option-values">
+                                    <div class="option-value active">30 Days</div>
+                                    <div class="option-value">60 Days</div>
+                                    <div class="option-value">90 Days</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-quantity">
+                            <span class="quantity-label">Quantity:</span>
+                            <div class="quantity-input">
+                                <button class="quantity-btn">-</button>
+                                <input type="text" class="quantity-field" value="1">
+                                <button class="quantity-btn">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-secondary">Save for Later</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-details-tabs">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="description">Description</button>
+                        <button class="tab-btn" data-tab="specifications">Specifications</button>
+                        <button class="tab-btn" data-tab="faq">FAQ</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="description">
+                        <h3>Product Overview</h3>
+                        <p>The Longevity Protocol is a carefully curated combination of two powerful peptides: Epithalon and Thymalin. This synergistic formulation works at the cellular level to support healthy aging, enhance immune function, and promote overall vitality.</p>
+                        
+                        <h3>Key Benefits</h3>
+                        <ul style="margin-left: 20px; margin-bottom: 20px;">
+                            <li>Supports telomere length and cellular health</li>
+                            <li>Enhances immune system function</li>
+                            <li>Promotes restorative sleep patterns</li>
+                            <li>Supports healthy inflammation response</li>
+                            <li>Improves skin elasticity and appearance</li>
+                        </ul>
+                        
+                        <h3>Usage Instructions</h3>
+                        <p>For optimal results, administer as directed by your healthcare provider. Typical protocol involves subcutaneous injections once daily for 30-90 days, depending on individual goals and response.</p>
+                    </div>
+                    
+                    <div class="tab-content" id="specifications">
+                        <div class="product-specs">
+                            <div class="spec-row">
+                                <div class="spec-label">Product Name</div>
+                                <div class="spec-value">Longevity Protocol</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Active Ingredients</div>
+                                <div class="spec-value">Epithalon, Thymalin</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Dosage</div>
+                                <div class="spec-value">5mg, 10mg, or 15mg per vial</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Form</div>
+                                <div class="spec-value">Lyophilized powder for reconstitution</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Storage</div>
+                                <div class="spec-value">Store at 2-8°C (36-46°F). Protect from light.</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Shelf Life</div>
+                                <div class="spec-value">24 months from date of manufacture</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="faq">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does it take to see results?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Most users begin to notice subtle improvements within 2-3 weeks, with more significant benefits becoming apparent after 4-6 weeks of consistent use. Individual results may vary based on age, health status, and lifestyle factors.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Are there any side effects?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our peptides are generally well-tolerated when used as directed. Some users may experience mild injection site reactions or temporary fatigue as the body adjusts. Always consult with your healthcare provider before starting any new supplement regimen.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How should I store the product?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Unreconstituted peptides should be stored in the refrigerator at 2-8°C (36-46°F). After reconstitution, the solution should be used within the timeframe specified in the product instructions, typically 7-14 days when refrigerated.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="related-products">
+                    <div class="section-title">
+                        <h2>Related Products</h2>
+                    </div>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <div class="related-image">
+                                <img src="https://z-cdn-media.chatglm.cn/files/0c9e4599-bad5-434c-95ea-69fd2d8b631b_9912f24c-a58f-48d9-86b9-6ecc4914d8c3.jpg?auth_key=1790874857-3f3a82a2ac174392826fc269fda71309-0-eb277d1ebfc2c2cd8c85d372dafed3ef" alt="Recovery Essentials">
+                            </div>
+                            <div class="related-content">
+                                <h3 class="related-title">Recovery Essentials</h3>
+                                <div class="related-price">$249.00</div>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <div class="related-image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGv_MCkxtwh6GANTNpuFp72mCkI1zi3Wzz_A&s" alt="Performance Max">
+                            </div>
+                            <div class="related-content">
+                                <h3 class="related-title">Performance Max</h3>
+                                <div class="related-price">$399.00</div>
+                            </div>
+                        </div>
+                        <div class="related-card">
+                            <div class="related-image">
+                                <div class="longevity-protocol-image" style="height: 200px;">
+                                    <div class="longevity-protocol-icon" style="width: 80px; height: 80px;">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="25" cy="25" r="20" stroke="#FFFFFF" stroke-width="2"/>
+                                            <path d="M25 12.5V37.5M12.5 25H37.5M18.75 18.75L31.25 31.25M31.25 18.75L18.75 31.25" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                                            <circle cx="25" cy="25" r="6" fill="#FFFFFF"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="longevity-protocol-title" style="font-size: 1.5rem;">Skin Renewal</h3>
+                                </div>
+                            </div>
+                            <div class="related-content">
+                                <h3 class="related-title">Skin Renewal</h3>
+                                <div class="related-price">$279.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Peptide Apotheca</h3>
+                    <p>Premium peptide solutions for enhanced wellness, recovery, and vitality. Science-backed formulations for the discerning individual.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#homepage">Home</a></li>
+                        <li><a href="#bundles">Product Bundles</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Ave, Health City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@peptideapotheca.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Peptide Apotheca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Page Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on the product page
+            if (window.location.hash === '#product') {
+                document.getElementById('homepage').style.display = 'none';
+                document.getElementById('product-page').style.display = 'block';
+            }
+            
+            // Product detail page links
+            const productLinks = document.querySelectorAll('a[href="#product"]');
+            productLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('homepage').style.display = 'none';
+                    document.getElementById('product-page').style.display = 'block';
+                    window.location.hash = 'product';
+                });
+            });
+            
+            // Homepage links
+            const homeLinks = document.querySelectorAll('a[href="#homepage"]');
+            homeLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('homepage').style.display = 'block';
+                    document.getElementById('product-page').style.display = 'none';
+                    window.location.hash = '';
+                });
+            });
+            
+            // Product thumbnails
+            const thumbnails = document.querySelectorAll('.product-thumbnail');
+            const mainImage = document.querySelector('.product-main-image img');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active');
+                    
+                    // Change main image
+                    const imgSrc = this.querySelector('img') ? this.querySelector('img').src : '';
+                    if (imgSrc) {
+                        mainImage.src = imgSrc;
+                    }
+                });
+            });
+            
+            // Product options
+            const optionValues = document.querySelectorAll('.option-value');
+            
+            optionValues.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove active class from all options in the same group
+                    const siblings = this.parentElement.querySelectorAll('.option-value');
+                    siblings.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked option
+                    this.classList.add('active');
+                });
+            });
+            
+            // Quantity buttons
+            const quantityBtns = document.querySelectorAll('.quantity-btn');
+            const quantityField = document.querySelector('.quantity-field');
+            
+            quantityBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(quantityField.value);
+                    
+                    if (this.textContent === '+') {
+                        currentValue++;
+                    } else {
+                        if (currentValue > 1) {
+                            currentValue--;
+                        }
+                    }
+                    
+                    quantityField.value = currentValue;
+                });
+            });
+            
+            // Tabs
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all tabs and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active class
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
